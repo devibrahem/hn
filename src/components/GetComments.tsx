@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import NestedComments from "./NestedComments";
 
 interface getCommentsProps {
   commentID: number;
@@ -29,7 +30,14 @@ const GetComments: React.FC<getCommentsProps> = ({ commentID }) => {
   return (
     <>
       {comment ? (
-        <p style={{ fontSize: "12px" }}>{comment.text}</p>
+        <ul>
+          <li style={{ fontSize: "12px" }}>{comment.text}</li>
+          {comment.kids
+            ? comment.kids.map((kid) => {
+                return <NestedComments commentID={kid} />;
+              })
+            : null}
+        </ul>
       ) : (
         <p>no comments yet</p>
       )}

@@ -16,7 +16,7 @@ const HomePage: React.FC<RouteComponentProps> = () => {
   return (
     <>
       {topStoreisIDs.map((storyID) => {
-        return <Story storyID={storyID} />;
+        return <Story storyID={storyID} commentsPage={false} />;
       })}
     </>
   );

@@ -8,7 +8,7 @@ function App() {
     <>
       <Router>
         <HomePage path="/" />
-        <CommentsPage path="/comments" />
+        <CommentsPage path="/comments/:id" />
       </Router>
     </>
   );

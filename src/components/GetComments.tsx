@@ -22,7 +22,6 @@ const GetComments: React.FC<getCommentsProps> = ({ commentID }) => {
     fetch(fetchData)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setComment(data);
       });
   }, [fetchData]);

@@ -34,16 +34,15 @@ const Story: React.FC<StoryProps> = ({ storyID, commentsPage }) => {
     <>
       {post ? (
         <div>
-          <a href={post.url} target="_blank" rel="noopener noreferrer">
+          <a
+            style={{ fontSize: "13px" }}
+            href={post.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Story Title : {post.title}
           </a>
-          <span>
-            (
-            <a href={post.url} target="_blank" rel="noopener noreferrer">
-              {post.url}
-            </a>
-            )
-          </span>
+
           <p>Story Votes Score : {post.score}</p>
           {commentsPage ? (
             post.kids.map((kid) => {
@@ -55,7 +54,7 @@ const Story: React.FC<StoryProps> = ({ storyID, commentsPage }) => {
           <hr />
         </div>
       ) : (
-        <p>Please wait white fetching the data</p>
+        <p>Please wait while fetching the data</p>
       )}
     </>
   );

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { RouteComponentProps } from "@reach/router";
-import Story from "../components/Story";
+import GetStories from "../components/GetStories";
 
 const HomePage: React.FC<RouteComponentProps> = () => {
   const [topStoreisIDs, setTopStoriesIDs] = useState<number[]>([]);
@@ -16,7 +16,7 @@ const HomePage: React.FC<RouteComponentProps> = () => {
   return (
     <>
       {topStoreisIDs.map((storyID) => {
-        return <Story storyID={storyID} commentsPage={false} />;
+        return <GetStories storyID={storyID} commentsPage={false} />;
       })}
     </>
   );

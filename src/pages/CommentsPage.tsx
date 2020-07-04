@@ -1,14 +1,12 @@
 import React from "react";
 import { RouteComponentProps } from "@reach/router";
-import Story from "../components/Story";
-
-interface CommentsPageProps {}
+import GetStories from "../components/GetStories";
 
 const CommentsPage: React.FC<RouteComponentProps> = (props) => {
   const storyID: number = Number(props.uri?.slice(10));
   return (
     <>
-      <Story storyID={storyID} commentsPage={true} />
+      <GetStories storyID={storyID} commentsPage={true} />
     </>
   );
 };
